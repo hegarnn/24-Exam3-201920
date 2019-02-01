@@ -3,9 +3,9 @@ Exam 3, problem 1.
 
 Authors: Vibha Alangar, Aaron Wilkin, David Mutchler, Dave Fisher, 
          Matt Boutell, Amanda Stouder, their colleagues and 
-         PUT_YOUR_NAME_HERE.  January 2019.
+         Nasser Hegar.  January 2019.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -126,7 +126,7 @@ def problem1(n):
       :rtype: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # **** IMPORTANT ****:
     # We supplied a   fibonacci   function above.
@@ -139,6 +139,29 @@ def problem1(n):
     # and THEN try the full-credit version.
     # As always, CONTINUE to the next problem if you are STUCK on this one.
     # -------------------------------------------------------------------------
+    fibbonaci = [0,1]
+    total = 0
+    largest_fib = 0
+    while (total < n):
+        total = 0
+
+        a=(len(fibbonaci)-2)
+        b=(len(fibbonaci)-1)
+        for k in range(a,b):
+            fibbonaci += [fibbonaci[a]+fibbonaci[b]]
+
+        for k in range(len(fibbonaci)-1):
+            total += fibbonaci[k]
+
+    for k in range(b+2):
+        if (largest_fib < n) and (fibbonaci[k] > largest_fib):
+            largest_fib = fibbonaci[k]
+
+    if largest_fib >= n:
+        largest_fib = fibbonaci[len(fibbonaci)-2]
+        return largest_fib
+    else:
+        return largest_fib
 
 
 ###############################################################################
